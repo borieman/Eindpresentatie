@@ -15,10 +15,9 @@ import geopandas as gpd
 # import folium_static
 # import folium 
 
-with st.echo():
-   import streamlit as st
-   from streamlit_folium import folium_static
-   import folium
+import streamlit as st
+from streamlit_folium import folium_static
+import folium
 
 st.beta_set_page_config(layout = "wide")
 
