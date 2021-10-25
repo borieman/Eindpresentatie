@@ -101,18 +101,24 @@ FIFA22_map = pd.DataFrame(FIFA22.groupby(['fifa_jaar', 'nationality'])['overall'
 
 df = gpd.GeoDataFrame(pd.merge(FIFA22_map, countries, how = 'left', on = 'nationality'))
 
-m = folium.Map(location=[0, 0],
-               zoom_start=2)
+# m = folium.Map(location=[0, 0],
+#                zoom_start=2)
 
-folium.Choropleth(geo_data=df,
-                  name='geometry',
-                  data=df,
-                  columns=['nationality','overall'],
-                  key_on='feature.properties.nationality', 
-                  fill_color='YlGn', 
-                  fill_opacity=0.9, 
-                  line_opacity=0.3,
-                  legend_name='Lagenda: Rating', 
-                  nan_fill_color='black').add_to(m)
+# folium.Choropleth(geo_data=df,
+#                   name='geometry',
+#                   data=df,
+#                   columns=['nationality','overall'],
+#                   key_on='feature.properties.nationality', 
+#                   fill_color='YlGn', 
+#                   fill_opacity=0.9, 
+#                   line_opacity=0.3,
+#                   legend_name='Lagenda: Rating', 
+#                   nan_fill_color='black').add_to(m)
 
-st.plotly_chart(m)
+fig = px.choropleth(FIFA22_map, geojson=countries, locations='nationality', color='overall',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 12),
+                           scope="world",
+                           labels={'unemp':'unemployment rate'}
+                          )
+st.plotly_chart(fig)
