@@ -10,9 +10,10 @@ import plotly.figure_factory as ff
 import plotly.io as pio
 pio.templates.default = 'seaborn'
 import statsmodels.api as sm
+!pip install geopandas
 import geopandas as gpd
+from streamlit_folium import folium_static
 import folium 
-
 
 st.beta_set_page_config(layout = "wide")
 
@@ -109,4 +110,4 @@ folium.Choropleth(geo_data=df,
                   legend_name='Lagenda: Rating', 
                   nan_fill_color='black').add_to(m)
 
-st.plotly_chart(fig)
+folium_static(fig)
