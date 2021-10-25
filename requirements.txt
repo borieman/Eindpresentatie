@@ -9,4 +9,4 @@ plotly
 folium
 scipy
 statsmodels
-geopandas
+
