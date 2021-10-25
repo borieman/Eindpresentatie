@@ -10,6 +10,8 @@ import plotly.figure_factory as ff
 import plotly.io as pio
 pio.templates.default = 'seaborn'
 import statsmodels.api as sm
+import geopandas as gpd
+import folium 
 
 
 st.beta_set_page_config(layout = "wide")
@@ -20,6 +22,39 @@ st.title("Fifa")
 st.write("""
 ***
 """)
+
+FIFA15 = pd.read_csv('players_15.csv', low_memory=False)
+FIFA15 = FIFA15[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
+FIFA16 = pd.read_csv('players_16.csv', low_memory=False)
+FIFA16 = FIFA16[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
+FIFA17 = pd.read_csv('players_17.csv', low_memory=False)
+FIFA17 = FIFA17[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
+FIFA18 = pd.read_csv('players_18.csv', low_memory=False)
+FIFA18 = FIFA18[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
+FIFA19 = pd.read_csv('players_19.csv', low_memory=False)
+FIFA19 = FIFA19[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
+FIFA20 = pd.read_csv('players_20.csv', low_memory=False)
+FIFA20 = FIFA20[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
+FIFA21 = pd.read_csv('players_21.csv', low_memory=False)
+FIFA21 = FIFA21[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
+FIFA22 = pd.read_csv('players_22.csv', low_memory=False)
+FIFA22 = FIFA22[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
+                 'height_cm', 'weight_kg', 'club_name', 'league_name', 'club_position', 'nationality', 'preferred_foot', 
+                 'weak_foot', 'skill_moves', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']]
 
 # De rijen verwijderen waar kolom 9, 10 en 11 missende waardes zijn.
 FIFA15['club_name'] = FIFA15['club_name'].fillna('No club')
