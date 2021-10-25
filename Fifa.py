@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import requests
-# import plotly.express as px
+import plotly.express as px
 # import plotly.graph_objects as go
 # import plotly.figure_factory as ff
 # import plotly.io as pio
 # pio.templates.default = 'seaborn'
 # import statsmodels.api as sm
-# import geopandas as gpd
+import geopandas as gpd
 # # from streamlit_folium import folium_static 
 # # import folium_static
 # import folium 
