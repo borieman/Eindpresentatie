@@ -11,7 +11,6 @@ import plotly.io as pio
 pio.templates.default = 'seaborn'
 import statsmodels.api as sm
 import geopandas as gpd
-pip install 
 # from streamlit_folium import folium_static 
 # import folium_static
 # import folium 
