@@ -91,6 +91,9 @@ FIFA20['fifa_jaar'] = 'FIFA20'
 FIFA21['fifa_jaar'] = 'FIFA21'
 FIFA22['fifa_jaar'] = 'FIFA22'
 
+geo = gpd.read_file('countries2.geojson')
+countries = geo.rename(columns={'ADMIN': 'nationality'})
+
 FIFA22_map = pd.DataFrame(FIFA22.groupby(['fifa_jaar', 'nationality'])['overall'].mean())
 
 df = gpd.GeoDataFrame(pd.merge(FIFA22_map, countries, how = 'left', on = 'nationality'))
