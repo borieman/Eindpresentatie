@@ -98,7 +98,7 @@ FIFA22_map = pd.DataFrame(FIFA22.groupby(['fifa_jaar', 'nationality'])['overall'
 
 df = gpd.GeoDataFrame(pd.merge(FIFA22_map, countries, how = 'left', on = 'nationality'))
 
-fig = folium.Map(location=[0, 0],
+m = folium.Map(location=[0, 0],
                zoom_start=2)
 
 folium.Choropleth(geo_data=df,
@@ -112,4 +112,4 @@ folium.Choropleth(geo_data=df,
                   legend_name='Lagenda: Rating', 
                   nan_fill_color='black').add_to(m)
 
-folium_static(fig)
+st.plotly_chart(m)
