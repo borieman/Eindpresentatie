@@ -9,3 +9,5 @@ plotly
 folium
 scipy
 statsmodels
+pip install git+git://github.com/geopandas/geopandas.git
+
