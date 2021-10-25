@@ -117,4 +117,4 @@ folium.Choropleth(geo_data=df,
                   legend_name='Lagenda: Rating', 
                   nan_fill_color='black').add_to(m)
 
-folium_static (m)
+st.plotly_chart(m)
