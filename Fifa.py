@@ -1,4 +1,4 @@
-import streamlit as st
+# import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -11,10 +11,15 @@ import plotly.io as pio
 pio.templates.default = 'seaborn'
 import statsmodels.api as sm
 import geopandas as gpd
-# pip install streamlit-folium
-from streamlit_folium import folium_static 
+pip install streamlit-folium
+# from streamlit_folium import folium_static 
 # import folium_static
-import folium 
+# import folium 
+
+with st.echo():
+   import streamlit as st
+   from streamlit_folium import folium_static
+   import folium
 
 st.beta_set_page_config(layout = "wide")
 
