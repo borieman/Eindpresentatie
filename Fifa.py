@@ -1,30 +1,30 @@
 import streamlit as st
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# import numpy as np
-# import json
-# import requests
-# import plotly.express as px
-# import plotly.graph_objects as go
-# import plotly.figure_factory as ff
-# import plotly.io as pio
-# pio.templates.default = 'seaborn'
-# import statsmodels.api as sm
-# import geopandas as gpd
-# # from streamlit_folium import folium_static 
-# # import folium_static
-# import folium 
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import json
+import requests
+import plotly.express as px
+import plotly.graph_objects as go
+import plotly.figure_factory as ff
+import plotly.io as pio
+pio.templates.default = 'seaborn'
+import statsmodels.api as sm
+import geopandas as gpd
+# from streamlit_folium import folium_static 
+# import folium_static
+import folium 
 
 
 
-# st.beta_set_page_config(layout = "wide")
+st.beta_set_page_config(layout = "wide")
 
 #Titel van de pagina
 st.title("Fifa")
 
-# st.write("""
-# ***
-# """)
+st.write("""
+***
+""")
 
 # FIFA15 = pd.read_csv('players_15.csv', low_memory=False)
 # FIFA15 = FIFA15[['sofifa_id', 'short_name', 'long_name', 'overall', 'potential', 'value_eur', 'wage_eur', 'age', 'dob',
